@@ -1,0 +1,75 @@
+﻿http://system.data.sqlite.org/index.html/doc/trunk/www/downloads.wiki
+
+System.Data.SQLite Downloads
+Runtime Library Notes 
+All downloadable packages on this web page that do not include the word "static" in their file name require the appropriate version (e.g. 2005, 2008, 2010, 2012, 2013, 2015, 2017) of the Microsoft Visual C++ Runtime Library, to be successfully installed on the target machine, prior to making use of the executables contained therein. It should also be noted that the downloadable packages on this web page that include the word "setup" (i.e. the setup packages) already include and will attempt to automatically install the required version of the Microsoft Visual C++ Runtime Library. 
+Latest Microsoft Visual C++ Runtime Library Downloads 
+For detailed information about the latest downloads for each Microsoft Visual C++ Runtime Library release, please refer to the following page: 
+  
+Latest Supported Visual C++ Downloads 
+  
+Support Notes - Downloadable Packages 
+This page contains all the downloadable packages (e.g. sources, binaries, setups, etc) for the current release version of the official "System.Data.SQLite" project. This page and the associated NuGet packages are the only official distribution points for these downloadable packages. If any of the downloadable packages are obtained elsewhere, it is very important to compare their SHA1 hashes to the corresponding hashes listed below in order to make sure the contained files are the same. 
+Support Notes - Other Projects 
+There are several other projects, with widely varying levels of support and compatibility, known to use the similar names. At least one of those projects is an unofficial fork of the legacy 1.0.66.0 release, modified (by a third-party) to work with Visual Studio 2010 (or higher). Only the software contained on this page is directly supported by the maintainers of this project (i.e. the SQLite Development Team) as we do not necessarily have any knowledge of the other projects that use the same (or a similar) name. That being said, if a particular question is related to the core SQLite native library itself, one of the SQLite support options is probably the best way to get an answer. 
+Windows Embedded Compact 
+The Precompiled Binaries for Windows CE (.NET Compact Framework) section of this page contains several binary packages for Windows Embedded Compact 2013. Further information on integrating SQLite into Windows Embedded Compact 2013 can be found at the following web site: 
+  
+SQLite for Windows Embedded Compact 2013 
+  
+Release Notes 
+The "release notes", which contain lists of notable changes associated with each officially released version, is available on the News page. 
+Package Types 
+There are a wide variety of downloadable packages on this page. Each of them is designed to meet the requirements of a particular development and/or deployment scenario. 
+
+The first step is to determine if the package is to be installed (or used) on a developer machine or a customer machine. 
+  
+The source packages are intended primarily for people interested in studying the source code that corresponds to a particular release version of the project. The source packages contain no binaries. Those interested in studying the latest source code and/or tracking the unreleased changes should consider accessing the Fossil repository instead. 
+
+The setup packages are intended to be installed only on developer machines and then only when the design-time components for Visual Studio are required. In theory, they can be installed on customer machines as well; however, this type of deployment is not recommended. 
+
+The binary packages are intended to be used by developers in order to obtain the assembly binaries necessary for development and deployment of their applications onto customer machines via XCOPY deployment. 
+  
+All the "bundle" packages contain the "System.Data.SQLite.dll" mixed-mode assembly. These packages should only be used in cases where the assembly binary must be deployed to the Global Assembly Cache for some reason (e.g. to support some legacy application on customer machines). 
+
+All the "static" packages contain either native or mixed-mode assembly binaries linked statically to the appropriate version of the Visual C++ runtime. Typically, these packages are used in cases where customer machines may not have the necessary version of the Visual C++ runtime installed and it cannot be installed due to limited privileges. 
+
+The next step is to identify the version of the .NET Framework being targeted by the application. Generally, assembly binaries linked against the .NET Framework 2.0 (or the .NET Framework 3.5) will work with the .NET Framework 4.0 (or higher); however, this is less than ideal. Furthermore, assemblies linked against the .NET Framework 4.0 (or higher) cannot be loaded by any versions of the .NET Framework prior to 4.0. 
+Using Native Library Pre-Loading 
+The final step is to identify the target processor architecture on both the development and customer machines. Generally, x86 binaries will work on an x64 machine running Windows (using WoW64). However, there is a problem when using managed code. If the executable that starts the process consists entirely of managed code, it will run with the native processor architecture of the machine, which will be x64 on an x64 machine. Later on, this will cause assemblies containing any native code compiled for x86 (e.g. the "System.Data.SQLite.dll" mixed-mode assembly, the "SQLite.Interop.dll" native interop assembly, or the "sqlite3.dll" native library) to fail to load, typically resulting in a BadImageFormatException being thrown. 
+
+If the development and customer machines may have different processor architectures, more than one binary package may be required. For this situation, using the native library pre-loading feature is highly recommended. It is available as of version 1.0.80.0 and enabled by default. In order to take advantage of this feature, the separate managed and interop assemblies must be used with XCOPY deployment (i.e. this feature is not supported by the mixed-mode assembly, nor when the assembly is deployed to the global assembly cache), resulting in an application deployment that looks something like this: 
+  
+<bin>\App.exe (optional, managed-only application executable assembly) 
+<bin>\App.dll (optional, managed-only application library assembly) 
+<bin>\System.Data.SQLite.dll (required, managed-only core assembly) 
+<bin>\System.Data.SQLite.Linq.dll (optional, managed-only LINQ assembly) 
+<bin>\System.Data.SQLite.EF6.dll (optional, managed-only EF6 assembly) 
+<bin>\x86\SQLite.Interop.dll (required, x86 native interop assembly) 
+<bin>\x64\SQLite.Interop.dll (required, x64 native interop assembly) 
+  
+The string "<bin>" above represents the directory where the application binaries are to be deployed on the target machine. With the native library pre-loading feature enabled and the application deployment shown above, the System.Data.SQLite managed-only assembly will attempt to automatically detect the processor architecture of the current process and pre-load the appropriate native library. 
+Advanced Configuration Settings 
+If native library pre-loading feature does not work properly in your environment, it can be disabled by setting the "No_PreLoadSQLite" environment variable (i.e. to anything) prior to loading and/or using the System.Data.SQLite assembly. There are several more environment variables that can be used to influence the behavior of the native library pre-loading feature, documented here. 
+
+Use of environment variables for configuration settings is not supported by the .NET Compact Framework builds of System.Data.SQLite, due to limitations imposed by the platform itself. 
+
+Alternatively, as of version 1.0.91.0, all configuration settings can be specified via an optional XML configuration file. Using the XML configuration file when the primary System.Data.SQLite assembly ("System.Data.SQLite.dll") is being executed from the Global Assembly Cache is unsupported. 
+
+For each configuration setting, the associated environment variable value, if present, will override the value specified via the XML configuration file. 
+
+For the full .NET Framework, the XML configuration file must be named "System.Data.SQLite.dll.config" and it must be present in the base directory for the application domain or the directory containing the primary System.Data.SQLite assembly as reported by its location property; otherwise, it will be ignored. 
+
+For the .NET Compact Framework, the XML configuration file must be named "System.Data.SQLite.dll.config" and it must be present in the directory containing the primary System.Data.SQLite assembly; otherwise, it will be ignored. 
+Deployment Guidelines 
+To summarize the above: 
+  
+Using XCOPY deployment in conjunction with the native library pre-loading feature, especially for customer machines, is highly recommended. 
+
+Using the Global Assembly Cache (at all) is not recommended; therefore, the "bundle" packages should be avoided unless deemed absolutely necessary. 
+
+Using the "static" assembly binaries on development machines is not recommended; therefore, the "static" packages should be avoided if all the target machines already have the Visual C++ runtime installed or it can be easily deployed beforehand. 
+
+Choosing the package matching the version of the .NET Framework being targeted is highly recommended. 
+
+Choosing the package matching the target processor architecture (for both development and customer machines) is almost certainly required for proper operation. Using the native library pre-loading feature should help with this. 

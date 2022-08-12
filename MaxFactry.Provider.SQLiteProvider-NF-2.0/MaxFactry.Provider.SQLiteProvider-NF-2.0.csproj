@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F1FF2AE-15DA-4942-918A-BE566A462EF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MaxFactry.Provider.SQLiteProvider_NF_2._0</RootNamespace>
+    <AssemblyName>MaxFactry.Provider.SQLiteProvider-NF-2.0</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;net2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;net2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE;TEST;net2</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MaxFactry.Base\DataLayer\Repository\Provider\MaxDataContextSQLiteProvider.cs" />
+    <Compile Include="MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" />
+    <Compile Include="MaxStartup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.txt" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+	  <PackageReference  Include="System.Data.SQLite" Version="1.0.115.5"></PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\MaxFactry.Provider.CoreProvider-NF-2.0\MaxFactry.Provider.CoreProvider-NF-2.0.csproj">
+      <Project>{52b25b28-7eff-4222-9c8f-38c558e0f0e8}</Project>
+      <Name>MaxFactry.Provider.CoreProvider-NF-2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\MaxFactry.General-NF-2.0\MaxFactry.General-NF-2.0.csproj">
+      <Project>{7ea91872-343d-4607-84ac-956e07195d64}</Project>
+      <Name>MaxFactry.General-NF-2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\MaxFactry.Base-NF-2.0\MaxFactry.Base-NF-2.0.csproj">
+      <Project>{b4784207-457e-4c7c-bf95-f72a901ed032}</Project>
+      <Name>MaxFactry.Base-NF-2.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\_sm\MaxFactry.Core\MaxFactry.Core-NF-2.0\MaxFactry.Core-NF-2.0.csproj">
+      <Project>{27e6cf32-fd87-4ae5-afa2-fad5cb86ae0c}</Project>
+      <Name>MaxFactry.Core-NF-2.0</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\_nuget\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\_nuget\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\..\_nuget\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\..\_nuget\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net20\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
