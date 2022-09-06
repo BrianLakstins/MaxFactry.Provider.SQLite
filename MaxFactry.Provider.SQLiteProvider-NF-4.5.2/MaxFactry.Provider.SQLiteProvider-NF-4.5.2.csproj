@@ -41,7 +41,11 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-	<PackageReference  Include="System.Data.SQLite" Version="1.0.115.5"></PackageReference>
+    <PackageReference Include="MaxFactry.Provider.Core">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite" Version="1.0.115.5">
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs">
@@ -67,24 +71,6 @@
     <None Include="MaxFactry.pfx" />
     <None Include="MaxFactry.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\MaxFactry.Provider.CoreProvider-NF-4.5.2\MaxFactry.Provider.CoreProvider-NF-4.5.2.csproj">
-      <Project>{3bdd898c-2cca-4ddd-b4ca-25e1ff6535ee}</Project>
-      <Name>MaxFactry.Provider.CoreProvider-NF-4.5.2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\MaxFactry.General-NF-4.5.2\MaxFactry.General-NF-4.5.2.csproj">
-      <Project>{a625c04c-84c7-4d75-8e53-8b37542235e0}</Project>
-      <Name>MaxFactry.General-NF-4.5.2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\MaxFactry.Base-NF-4.5.2\MaxFactry.Base-NF-4.5.2.csproj">
-      <Project>{2120b857-fad6-4310-9ec8-3d958087fee2}</Project>
-      <Name>MaxFactry.Base-NF-4.5.2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\_sm\MaxFactry.Core\MaxFactry.Core-NF-4.5.2\MaxFactry.Core-NF-4.5.2.csproj">
-      <Project>{db84bcde-6f72-4657-811f-40a824ae041f}</Project>
-      <Name>MaxFactry.Core-NF-4.5.2</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

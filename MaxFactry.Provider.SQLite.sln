@@ -3,41 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_references", "_references", "{98E74278-96DF-4CF5-A247-9647EE5A9909}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MaxFactry", "MaxFactry", "{A70B9A02-C5EA-4448-AE69-65F3F6C1B826}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{431D15E9-E2E8-499D-99A2-946E8AC2207B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{4257803C-E277-428D-AA17-85483F217F93}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97D97ECA-B93B-4C51-B0C3-F6D435523736}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Providers", "Providers", "{30D70EA1-1E32-480D-AB09-5D93E33F76AE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B86A8B5A-AAE9-4CBF-A462-02C8E5127730}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NF-2.0", "MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Provider.SQLiteProvider-NF-2.0.csproj", "{2F1FF2AE-15DA-4942-918A-BE566A462EF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NF-4.5.2", "MaxFactry.Provider.SQLiteProvider-NF-4.5.2\MaxFactry.Provider.SQLiteProvider-NF-4.5.2.csproj", "{57C5529F-A3E7-496B-8C09-DDB5FAA9D157}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General", "General", "{FF0C25B1-7858-41BE-9274-5F450985DEFD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Core-NF-2.0", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\_sm\MaxFactry.Core\MaxFactry.Core-NF-2.0\MaxFactry.Core-NF-2.0.csproj", "{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Core-NF-4.5.2", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\_sm\MaxFactry.Core\MaxFactry.Core-NF-4.5.2\MaxFactry.Core-NF-4.5.2.csproj", "{DB84BCDE-6F72-4657-811F-40A824AE041F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Base-NF-2.0", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\MaxFactry.Base-NF-2.0\MaxFactry.Base-NF-2.0.csproj", "{B4784207-457E-4C7C-BF95-F72A901ED032}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Base-NF-4.5.2", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\_sm\MaxFactry.Base\MaxFactry.Base-NF-4.5.2\MaxFactry.Base-NF-4.5.2.csproj", "{2120B857-FAD6-4310-9EC8-3D958087FEE2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.General-NF-2.0", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\MaxFactry.General-NF-2.0\MaxFactry.General-NF-2.0.csproj", "{7EA91872-343D-4607-84AC-956E07195D64}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.General-NF-4.5.2", "_sm\MaxFactry.Provider.Core\_sm\MaxFactry.General\MaxFactry.General-NF-4.5.2\MaxFactry.General-NF-4.5.2.csproj", "{A625C04C-84C7-4D75-8E53-8B37542235E0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.CoreProvider-NF-2.0", "_sm\MaxFactry.Provider.Core\MaxFactry.Provider.CoreProvider-NF-2.0\MaxFactry.Provider.CoreProvider-NF-2.0.csproj", "{52B25B28-7EFF-4222-9C8F-38C558E0F0E8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.CoreProvider-NF-4.5.2", "_sm\MaxFactry.Provider.Core\MaxFactry.Provider.CoreProvider-NF-4.5.2\MaxFactry.Provider.CoreProvider-NF-4.5.2.csproj", "{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{4E76EE3C-8B20-4F55-9823-5901EDB77848}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\package.bat = .nuget\package.bat
+		.nuget\MaxFactry.Provider.SQLite.nuspec = .nuget\MaxFactry.Provider.SQLite.nuspec
+		.nuget\readme.md = .nuget\readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,57 +30,9 @@ Global
 		{57C5529F-A3E7-496B-8C09-DDB5FAA9D157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57C5529F-A3E7-496B-8C09-DDB5FAA9D157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57C5529F-A3E7-496B-8C09-DDB5FAA9D157}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DB84BCDE-6F72-4657-811F-40A824AE041F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DB84BCDE-6F72-4657-811F-40A824AE041F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DB84BCDE-6F72-4657-811F-40A824AE041F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DB84BCDE-6F72-4657-811F-40A824AE041F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B4784207-457E-4C7C-BF95-F72A901ED032}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B4784207-457E-4C7C-BF95-F72A901ED032}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B4784207-457E-4C7C-BF95-F72A901ED032}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B4784207-457E-4C7C-BF95-F72A901ED032}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2120B857-FAD6-4310-9EC8-3D958087FEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2120B857-FAD6-4310-9EC8-3D958087FEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2120B857-FAD6-4310-9EC8-3D958087FEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2120B857-FAD6-4310-9EC8-3D958087FEE2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EA91872-343D-4607-84AC-956E07195D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EA91872-343D-4607-84AC-956E07195D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EA91872-343D-4607-84AC-956E07195D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EA91872-343D-4607-84AC-956E07195D64}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A625C04C-84C7-4D75-8E53-8B37542235E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A625C04C-84C7-4D75-8E53-8B37542235E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A625C04C-84C7-4D75-8E53-8B37542235E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A625C04C-84C7-4D75-8E53-8B37542235E0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52B25B28-7EFF-4222-9C8F-38C558E0F0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52B25B28-7EFF-4222-9C8F-38C558E0F0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52B25B28-7EFF-4222-9C8F-38C558E0F0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52B25B28-7EFF-4222-9C8F-38C558E0F0E8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{A70B9A02-C5EA-4448-AE69-65F3F6C1B826} = {98E74278-96DF-4CF5-A247-9647EE5A9909}
-		{431D15E9-E2E8-499D-99A2-946E8AC2207B} = {A70B9A02-C5EA-4448-AE69-65F3F6C1B826}
-		{4257803C-E277-428D-AA17-85483F217F93} = {A70B9A02-C5EA-4448-AE69-65F3F6C1B826}
-		{30D70EA1-1E32-480D-AB09-5D93E33F76AE} = {A70B9A02-C5EA-4448-AE69-65F3F6C1B826}
-		{B86A8B5A-AAE9-4CBF-A462-02C8E5127730} = {30D70EA1-1E32-480D-AB09-5D93E33F76AE}
-		{FF0C25B1-7858-41BE-9274-5F450985DEFD} = {A70B9A02-C5EA-4448-AE69-65F3F6C1B826}
-		{27E6CF32-FD87-4AE5-AFA2-FAD5CB86AE0C} = {431D15E9-E2E8-499D-99A2-946E8AC2207B}
-		{DB84BCDE-6F72-4657-811F-40A824AE041F} = {431D15E9-E2E8-499D-99A2-946E8AC2207B}
-		{B4784207-457E-4C7C-BF95-F72A901ED032} = {4257803C-E277-428D-AA17-85483F217F93}
-		{2120B857-FAD6-4310-9EC8-3D958087FEE2} = {4257803C-E277-428D-AA17-85483F217F93}
-		{7EA91872-343D-4607-84AC-956E07195D64} = {FF0C25B1-7858-41BE-9274-5F450985DEFD}
-		{A625C04C-84C7-4D75-8E53-8B37542235E0} = {FF0C25B1-7858-41BE-9274-5F450985DEFD}
-		{52B25B28-7EFF-4222-9C8F-38C558E0F0E8} = {B86A8B5A-AAE9-4CBF-A462-02C8E5127730}
-		{3BDD898C-2CCA-4DDD-B4CA-25E1FF6535EE} = {B86A8B5A-AAE9-4CBF-A462-02C8E5127730}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B9CCA1E-706C-4801-B3C5-A85275A47D78}
