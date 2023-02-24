@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug.ref\</OutputPath>
     <DefineConstants>TRACE;DEBUG;net2;net4_52</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\Release.ref\</OutputPath>
     <DefineConstants>TRACE;net2;net4_52</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -41,8 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <PackageReference Include="System.Data.SQLite" Version="1.0.117">
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs">
@@ -84,6 +82,11 @@
       <Project>{3bdd898c-2cca-4ddd-b4ca-25e1ff6535ee}</Project>
       <Name>MaxFactry.Provider.CoreProvider-NF-4.5.2.ref</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetFramework">
+      <Version>1.0.117</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
