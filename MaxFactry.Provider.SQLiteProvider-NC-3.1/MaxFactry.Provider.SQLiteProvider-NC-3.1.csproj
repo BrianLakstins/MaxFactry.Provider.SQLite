@@ -12,7 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.7" />
+		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.20.4" />
 		<PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.117" />
 	</ItemGroup>
 
