@@ -30,6 +30,7 @@
 // <change date="4/1/2016" author="Brian A. Lakstins" description="Initial Release">
 // <change date="7/22/2016" author="Brian A. Lakstins" description="Update to automatically create the data file.">
 // <change date="12/29/2016" author="Brian A. Lakstins" description="Updated to create database folder before creating database file.">
+// <change date="7/20/2023" author="Brian A. Lakstins" description="Add methods to generate configuration.">
 // </changelog>
 #endregion
 
@@ -38,6 +39,8 @@ namespace MaxFactry.Base.DataLayer.Provider
 	using System;
     using System.IO;
     using MaxFactry.Core;
+    using MaxFactry.Core.Provider;
+    using MaxFactry.General;
     using MaxFactry.Provider.CoreProvider.DataLayer;
 
 	/// <summary>
@@ -48,6 +51,51 @@ namespace MaxFactry.Base.DataLayer.Provider
         private static MaxIndex _oDataFileCreated = new MaxIndex();
 
         private static object _oLock = new object();
+
+        public static MaxIndex GetDefaultContextConfig()
+        {
+            MaxIndex loR = new MaxIndex();
+            string lsProviderType = "DefaultContextProviderTypeSQLite";
+            loR.Add(lsProviderType, typeof(MaxDataContextSQLiteProvider));
+            string lsBase = typeof(MaxFactry.Core.MaxProvider).ToString();
+            string lsKey = "DefaultContextProviderName";
+            loR.Add(lsBase + "-" + lsKey, lsProviderType);
+            return loR;
+        }
+
+        public static MaxIndex GetDefaultProviderConfig(string lsDbFileNameBase)
+        {
+            MaxIndex loR = new MaxIndex();
+            string lsProductFolder = MaxConfigurationLibrary.GetValue(MaxEnumGroup.ScopeApplication, "MaxDataDirectory") as string;
+            string lsDbFileName = lsDbFileNameBase + "V" + MaxAppLibrary.ProductVersion + ".db";
+
+            //// SQLite Database Configuration
+            string lsDataFolder = System.IO.Path.Combine(lsProductFolder, "data");
+            string lsDataFile = System.IO.Path.Combine(lsDataFolder, lsDbFileName);
+            string lsProviderName = typeof(System.Data.SQLite.SQLiteFactory).Namespace; //System.Data.SQLite
+
+            string lsConnectionString = "Data Source=" + lsDataFile + ";";
+            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionVersion, "3") + ";";
+            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionBinaryGUID, "false") + ";";
+            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionDateTimeKind, "utc") + ";";
+
+            string lsClass = typeof(System.Data.SQLite.SQLiteFactory).FullName; // System.Data.SQLite.SQLiteFactory
+            string lsAssemblyFile = typeof(System.Data.SQLite.SQLiteFactory).Module.ToString(); //System.Data.SQLite.dll
+            string lsName = lsDataFile;
+
+            loR = MaxDataContextADODbProvider.AddConfig(
+                lsName,
+                lsConnectionString,
+                lsProviderName,
+                lsClass,
+                lsAssemblyFile,
+                typeof(MaxFactry.Base.DataLayer.Library.Provider.MaxSqlGenerationLibrarySQLiteProvider),
+                null);
+
+            loR.Add("MaxDataFile", lsDataFile);
+            loR.Add("MaxDataFileConnection", lsConnectionString);
+            return loR;
+        }
 
         public override void Initialize(string lsName, MaxIndex loConfig)
         {
