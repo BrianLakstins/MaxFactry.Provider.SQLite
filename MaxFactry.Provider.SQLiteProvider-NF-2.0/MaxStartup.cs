@@ -29,17 +29,17 @@
 // <changelog>
 // <change date="2/19/2019" author="Brian A. Lakstins" description="Initial creation">
 // <change date="2/21/2019" author="Brian A. Lakstins" description="Update to allow different file name for default database.  Add speed options.">
+// <change date="7/21/2023" author="Brian A. Lakstins" description="Added new method to create database and added setting provider configuration">
 // </changelog>
 #endregion
 
 namespace MaxFactry.Provider.SQLiteProvider
 {
     using System;
-    using System.IO;
-    using System.Security.AccessControl;
-    using System.Security.Principal;
+    using MaxFactry.Base.DataLayer.Library.Provider;
     using MaxFactry.Core;
     using MaxFactry.Base.DataLayer.Provider;
+    using MaxFactry.General;
 
     /// <summary>
     /// Class used to define initialization tasks for a module or provider.
@@ -85,18 +85,26 @@ namespace MaxFactry.Provider.SQLiteProvider
         }
 
         /// <summary>
-        /// To be run first, before anything else in the application.
-        /// </summary>
-        public virtual void RegisterProviders()
-        {
-        }
-
-        /// <summary>
         /// To be run after providers have been registered
         /// </summary>
         /// <param name="loConfig">The configuration for the default repository provider.</param>
         public virtual void SetProviderConfiguration(MaxIndex loConfig)
         {
+            loConfig.Add(
+                typeof(MaxDataContextSQLiteProvider).Name,
+                typeof(MaxDataContextSQLiteProvider));
+
+            //// Set default DataContextProvider
+            loConfig.Add(typeof(MaxFactry.Core.MaxProvider) + "-" + MaxDataContextDefaultProvider.DefaultContextProviderConfigName, typeof(MaxDataContextSQLiteProvider).Name);
+        }
+
+        /// <summary>
+        /// To be run first, before anything else in the application.
+        /// </summary>
+        public virtual void RegisterProviders()
+        {
+
+
         }
 
         /// <summary>
@@ -104,49 +112,41 @@ namespace MaxFactry.Provider.SQLiteProvider
         /// </summary>
         public virtual void ApplicationStartup()
         {
-            SetupDatabase(string.Empty);
+            InitializeDatabase("Data");
         }
 
-        public void SetupDatabase(string lsDbFileName)
+        public static void InitializeDatabase(string lsBaseName)
         {
             string lsProductFolder = MaxConfigurationLibrary.GetValue(MaxEnumGroup.ScopeApplication, "MaxDataDirectory") as string;
-            string lsVersion = MaxConfigurationLibrary.GetValue(MaxEnumGroup.ScopeApplication, "MaxAssemblyVersion").ToString();
-
-            if (string.IsNullOrEmpty(lsDbFileName))
-            {
-                lsDbFileName = "DataV" + lsVersion + ".db";
-            }
+            string lsVersion = MaxAppLibrary.ProductVersion;
+            string lsDbFileName = lsBaseName + "V-" + lsVersion + ".db";
 
             //// SQLite Database Configuration
             string lsDataFolder = System.IO.Path.Combine(lsProductFolder, "data");
             string lsDataFile = System.IO.Path.Combine(lsDataFolder, lsDbFileName);
-            string lsProviderName = "System.Data.SQLite";
+            string lsProviderName = typeof(System.Data.SQLite.SQLiteFactory).Namespace;
+
             string lsConnectionString = "Data Source=" + lsDataFile + ";";
             lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionVersion, "3") + ";";
             lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionBinaryGUID, "false") + ";";
             lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionDateTimeKind, "utc") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionPooling, "true") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionMaxPoolSize, "300") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionCacheSize, "20000") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionJournalMode, "Delete") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionSynchronous, "Full") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionDefaultTimeout, "30") + ";";
-            lsConnectionString += String.Format(MaxDataContextSQLiteProvider.OptionBusyTimeout, "30") + ";";
 
-            string lsClass = "System.Data.SQLite.SQLiteFactory, System.Data.SQLite";
-            string lsAssemblyFile = string.Empty;
+            string lsClass = typeof(System.Data.SQLite.SQLiteFactory).FullName; // System.Data.SQLite.SQLiteFactory
+            string lsAssemblyFile = typeof(System.Data.SQLite.SQLiteFactory).Module.ToString(); //System.Data.SQLite.dll
             string lsName = lsDataFile;
 
-            MaxIndex loDbConfig = MaxFactry.Base.DataLayer.Provider.MaxDataContextADODbProvider.AddConfig(
+            MaxIndex loDbConfig = MaxDataContextADODbProvider.AddConfig(
                 lsName,
                 lsConnectionString,
                 lsProviderName,
                 lsClass,
                 lsAssemblyFile,
-                typeof(MaxFactry.Base.DataLayer.Library.Provider.MaxSqlGenerationLibrarySQLiteProvider),
+                typeof(MaxSqlGenerationLibrarySQLiteProvider),
                 null);
 
-            MaxFactryLibrary.SetValue(typeof(MaxFactry.Base.DataLayer.Provider.MaxDataContextSQLiteProvider) + "-Config", loDbConfig);
+            loDbConfig.Add("MaxDataFile", lsDataFile);
+            loDbConfig.Add("MaxDataFileConnection", lsConnectionString);
+            MaxFactryLibrary.SetValue(typeof(MaxDataContextSQLiteProvider) + "-Config", loDbConfig);
         }
     }
 }
