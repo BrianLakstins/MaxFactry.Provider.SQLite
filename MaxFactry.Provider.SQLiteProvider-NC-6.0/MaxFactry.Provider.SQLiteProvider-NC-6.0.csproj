@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>MaxFactry.Provider.SQLiteProvider_NC_6._0</RootNamespace>
+	  <Version>1.0.20.1</Version>
+	  <AssemblyVersion>1.0.20.1</AssemblyVersion>
+	  <FileVersion>2023.07.21.01</FileVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -13,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.20.4" />
+    <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.20.6" />
     <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
   </ItemGroup>
 
