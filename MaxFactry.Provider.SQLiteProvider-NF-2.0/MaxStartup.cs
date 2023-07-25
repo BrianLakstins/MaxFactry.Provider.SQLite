@@ -90,12 +90,7 @@ namespace MaxFactry.Provider.SQLiteProvider
         /// <param name="loConfig">The configuration for the default repository provider.</param>
         public virtual void SetProviderConfiguration(MaxIndex loConfig)
         {
-            loConfig.Add(
-                typeof(MaxDataContextSQLiteProvider).Name,
-                typeof(MaxDataContextSQLiteProvider));
-
-            //// Set default DataContextProvider
-            loConfig.Add(typeof(MaxFactry.Core.MaxProvider) + "-" + MaxDataContextDefaultProvider.DefaultContextProviderConfigName, typeof(MaxDataContextSQLiteProvider).Name);
+            loConfig.Add(typeof(MaxDataContextSQLiteProvider).Name, typeof(MaxDataContextSQLiteProvider));
         }
 
         /// <summary>
@@ -103,8 +98,6 @@ namespace MaxFactry.Provider.SQLiteProvider
         /// </summary>
         public virtual void RegisterProviders()
         {
-
-
         }
 
         /// <summary>

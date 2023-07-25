@@ -12,8 +12,8 @@ copy ..\MaxFactry.Provider.SQLiteProvider-NF-4.8\bin\Release\MaxFactry.Provider.
 copy ..\MaxFactry.Provider.SQLiteProvider-NF-4.8\bin\Release\x86\*.* lib\net48\x86
 copy ..\MaxFactry.Provider.SQLiteProvider-NF-4.8\bin\Release\x64\*.* lib\net48\x64
 copy ..\MaxFactry.Provider.SQLiteProvider-NC-3.1\bin\Release\netcoreapp3.1\MaxFactry.Provider.SQLite*.dll lib\netcoreapp3.1\
-copy ..\MaxFactry.Provider.SQLiteProvider-NC-3.1\bin\Release\netcoreapp3.1\x64\*.* lib\netcoreapp3.1\x64
+rem copy ..\MaxFactry.Provider.SQLiteProvider-NC-3.1\bin\Release\netcoreapp3.1\x64\*.* lib\netcoreapp3.1\x64
 copy ..\MaxFactry.Provider.SQLiteProvider-NC-6.0\bin\Release\net6.0\MaxFactry.Provider.SQLite*.dll lib\net6.0\
-copy ..\MaxFactry.Provider.SQLiteProvider-NC-6.0\bin\Release\net6.0\x64\*.* lib\net6.0\x64
+rem copy ..\MaxFactry.Provider.SQLiteProvider-NC-6.0\bin\Release\net6.0\x64\*.* lib\net6.0\x64
 
 c:\install\nuget\nuget.exe pack MaxFactry.Provider.SQLite.nuspec -OutputDirectory "packages" -IncludeReferencedProjects -properties Configuration=Release 
