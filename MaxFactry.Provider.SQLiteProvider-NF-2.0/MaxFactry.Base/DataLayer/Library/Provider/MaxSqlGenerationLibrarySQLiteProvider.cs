@@ -91,7 +91,7 @@ namespace MaxFactry.Base.DataLayer.Library.Provider
             for (int lnK = 0; lnK < laKeyList.Length; lnK++)
             {
                 string lsKey = laKeyList[lnK];
-                if (this.IsStored(loDataModel, lsKey))
+                if (loDataModel.IsStored(lsKey))
                 {
                     bool lbExists = false;
                     for (int lnD = 0; lnD < loDataList.Count; lnD++)
