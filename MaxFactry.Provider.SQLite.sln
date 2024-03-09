@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{4E76EE3C-8B20-4F55-9823-5901EDB77848}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\MaxFactry.Provider.SQLite.nuspec = .nuget\MaxFactry.Provider.SQLite.nuspec
+		.nuget\nuget.config = .nuget\nuget.config
 		.nuget\package.bat = .nuget\package.bat
 		.nuget\readme.md = .nuget\readme.md
 	EndProjectSection
@@ -20,9 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLitePr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NF-4.8", "MaxFactry.Provider.SQLiteProvider-NF-4.8\MaxFactry.Provider.SQLiteProvider-NF-4.8.csproj", "{AB64FC61-C4C5-4CFB-A0CC-4DC75F1987D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NC-6.0", "MaxFactry.Provider.SQLiteProvider-NC-6.0\MaxFactry.Provider.SQLiteProvider-NC-6.0.csproj", "{A4210F63-AC69-43C7-8F24-2707022ED9B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxFactry.Provider.SQLiteProvider-NC-6.0", "MaxFactry.Provider.SQLiteProvider-NC-6.0\MaxFactry.Provider.SQLiteProvider-NC-6.0.csproj", "{A4210F63-AC69-43C7-8F24-2707022ED9B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NC-3.1", "MaxFactry.Provider.SQLiteProvider-NC-3.1\MaxFactry.Provider.SQLiteProvider-NC-3.1.csproj", "{ED6239FF-F5BB-4B6B-A85C-EBE7A3094069}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxFactry.Provider.SQLiteProvider-NC-3.1", "MaxFactry.Provider.SQLiteProvider-NC-3.1\MaxFactry.Provider.SQLiteProvider-NC-3.1.csproj", "{ED6239FF-F5BB-4B6B-A85C-EBE7A3094069}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxFactry.Provider.SQLiteProvider-NC-8.0", "MaxFactry.Provider.SQLiteProvider-NC-8.0\MaxFactry.Provider.SQLiteProvider-NC-8.0.csproj", "{53B8A7BD-698A-4186-ABB8-A5AB1E9FB271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +57,10 @@ Global
 		{ED6239FF-F5BB-4B6B-A85C-EBE7A3094069}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED6239FF-F5BB-4B6B-A85C-EBE7A3094069}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED6239FF-F5BB-4B6B-A85C-EBE7A3094069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B8A7BD-698A-4186-ABB8-A5AB1E9FB271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B8A7BD-698A-4186-ABB8-A5AB1E9FB271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B8A7BD-698A-4186-ABB8-A5AB1E9FB271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B8A7BD-698A-4186-ABB8-A5AB1E9FB271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

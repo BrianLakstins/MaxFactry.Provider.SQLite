@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>MaxFactry.Provider.SQLiteProvider_NC_3._1</RootNamespace>
-	  <Version>1.0.22.2</Version>
-	  <AssemblyVersion>1.0.22.2</AssemblyVersion>
-	  <FileVersion>2023.07.25.02</FileVersion>
+    <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
+		<Version>1.0.24.1</Version>
+	  <AssemblyVersion>1.0.24.1</AssemblyVersion>
+	  <FileVersion>2024.03.08.01</FileVersion>
 	  <Nullable>enable</Nullable>
   </PropertyGroup>
 
@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.22.2" />
+		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.1" />
 		<PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
 	</ItemGroup>
 

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
+	  <Version>1.0.24.1</Version>
+	  <AssemblyVersion>1.0.24.1</AssemblyVersion>
+	  <FileVersion>2024.03.08.01</FileVersion>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" />
+	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Repository\Provider\MaxDataContextSQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Repository\Provider\MaxDataContextSQLiteProvider.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.1" />
+	  <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />
+	  <Folder Include="MaxFactry.Base\DataLayer\Repository\Provider\" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <None Update="x64\SQLite.Interop.dll">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+  </ItemGroup>
+
+</Project>
