@@ -29,6 +29,7 @@
 // <changelog>
 // <change date="4/1/2016" author="Brian A. Lakstins" description="Initial Release">
 // <change date="4/22/2016" author="Brian A. Lakstins" description="Updated to support altering a table.">
+// <change date="3/31/2024" author="Brian A. Lakstins" description="Update for Namespace and naming convention changes">
 // </changelog>
 #endregion
 
@@ -86,18 +87,16 @@ namespace MaxFactry.Base.DataLayer.Library.Provider
         public override string GetTableAlter(MaxDataModel loDataModel, MaxDataList loDataList)
         {
             StringBuilder loCommandText = new StringBuilder();
-            string[] laKeyList = loDataModel.GetKeyList();
             int lnAdded = 0;
-            for (int lnK = 0; lnK < laKeyList.Length; lnK++)
+            foreach (string lsDataName in loDataModel.DataNameList)
             {
-                string lsKey = laKeyList[lnK];
-                if (loDataModel.IsStored(lsKey))
+                if (loDataModel.IsStored(lsDataName))
                 {
                     bool lbExists = false;
                     for (int lnD = 0; lnD < loDataList.Count; lnD++)
                     {
                         MaxData loData = loDataList[lnD];
-                        if (loData.Get("name").ToString() == lsKey)
+                        if (loData.Get("name").ToString() == lsDataName)
                         {
                             lbExists = true;
                         }
@@ -105,8 +104,8 @@ namespace MaxFactry.Base.DataLayer.Library.Provider
 
                     if (!lbExists)
                     {
-                        string lsType = string.Concat("MaxDefinitionType.", loDataModel.GetValueType(lsKey), ".");
-                        loCommandText.Append(string.Concat("ALTER TABLE [", loDataModel.DataStorageName, "] ADD COLUMN [", lsKey, "] ", lsType, ";"));
+                        string lsType = string.Concat("MaxDefinitionType.", loDataModel.GetValueType(lsDataName), ".");
+                        loCommandText.Append(string.Concat("ALTER TABLE [", loDataModel.DataStorageName, "] ADD COLUMN [", lsDataName, "] ", lsType, ";"));
                         lnAdded++;
                     }
                 }

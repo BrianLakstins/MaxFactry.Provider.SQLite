@@ -10,18 +10,17 @@
   </PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" />
 		<Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" />
-		<Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Repository\Provider\MaxDataContextSQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Repository\Provider\MaxDataContextSQLiteProvider.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.1" />
+		<PackageReference Include="MaxFactry.General" Version="1.0.24.3" />
+		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.3" />
 		<PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />
-		<Folder Include="MaxFactry.Base\DataLayer\Repository\Provider\" />
 	</ItemGroup>
 
 	<ItemGroup>

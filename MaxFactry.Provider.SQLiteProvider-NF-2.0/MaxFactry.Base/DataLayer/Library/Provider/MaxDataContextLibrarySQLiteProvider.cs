@@ -1,4 +1,4 @@
-﻿// <copyright file="MaxDataContextSQLiteProvider.cs" company="Lakstins Family, LLC">
+﻿// <copyright file="MaxDataContextLibrarySQLiteProvider.cs" company="Lakstins Family, LLC">
 // Copyright (c) Brian A. Lakstins (http://www.lakstins.com/brian/)
 // </copyright>
 
@@ -32,22 +32,22 @@
 // <change date="12/29/2016" author="Brian A. Lakstins" description="Updated to create database folder before creating database file.">
 // <change date="7/20/2023" author="Brian A. Lakstins" description="Add methods to generate configuration.">
 // <change date="7/21/2023" author="Brian A. Lakstins" description="Move configuration methods to MaxStartup">
+// <change date="3/31/2024" author="Brian A. Lakstins" description="Update for Namespace and naming convention changes">
 // </changelog>
 #endregion
 
-namespace MaxFactry.Base.DataLayer.Provider
+namespace MaxFactry.Base.DataLayer.Library.Provider
 {
 	using System;
     using System.IO;
     using MaxFactry.Core;
     using MaxFactry.Core.Provider;
-    using MaxFactry.General;
     using MaxFactry.Provider.CoreProvider.DataLayer;
 
 	/// <summary>
 	/// Data Context used to work with SQLite databases through ADO.NET (Connection, Command, Parameter)
 	/// </summary>
-    public class MaxDataContextSQLiteProvider : MaxDataContextADODbProvider
+    public class MaxDataContextLibrarySQLiteProvider : MaxDataContextLibraryADODbProvider
 	{
         private static MaxIndex _oDataFileCreated = new MaxIndex();
 
@@ -58,7 +58,7 @@ namespace MaxFactry.Base.DataLayer.Provider
             base.Initialize(lsName, loConfig);
         }
 
-        protected override bool HasTable(MaxDataModel loDataModel, System.Data.Common.DbConnection loConnection)
+        protected override bool IsTableFound(MaxDataModel loDataModel, System.Data.Common.DbConnection loConnection)
         {
             if (!_oDataFileCreated.Contains(loConnection.ConnectionString))
             {
@@ -91,7 +91,7 @@ namespace MaxFactry.Base.DataLayer.Provider
                 }
             }
 
-            return base.HasTable(loDataModel, loConnection);
+            return base.IsTableFound(loDataModel, loConnection);
         }
 
         /// <summary>
