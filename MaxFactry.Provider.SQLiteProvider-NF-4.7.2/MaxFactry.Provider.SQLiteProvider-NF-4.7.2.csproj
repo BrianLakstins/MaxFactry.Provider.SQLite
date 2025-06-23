@@ -41,10 +41,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <PackageReference Include="MaxFactry.General">
-      <Version>1.0.24.3</Version>
+      <Version>1.0.24.56</Version>
     </PackageReference>
     <PackageReference Include="MaxFactry.Provider.Core">
-      <Version>1.0.24.3</Version>
+      <Version>1.0.24.56</Version>
     </PackageReference>
     <PackageReference Include="System.Data.SQLite" Version="1.0.118">
     </PackageReference>

@@ -16,9 +16,9 @@
 	</ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="MaxFactry.General" Version="1.0.24.3" />
-	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.3" />
-    <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
+	  <PackageReference Include="MaxFactry.General" Version="1.0.24.56" />
+	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.56" />
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.119" />
   </ItemGroup>
 
 	<ItemGroup>
