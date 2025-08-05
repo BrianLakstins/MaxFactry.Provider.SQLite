@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
-	  <Version>1.0.24.69</Version>
-	  <AssemblyVersion>1.0.24.69</AssemblyVersion>
-	  <FileVersion>2025.08.05.01</FileVersion>
+	  <Version>1.0.24.70</Version>
+	  <AssemblyVersion>1.0.24.70</AssemblyVersion>
+	  <FileVersion>2025.08.05.02</FileVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
