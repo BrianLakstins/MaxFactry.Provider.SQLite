@@ -3,12 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
-	  <Version>1.0.24.70</Version>
-	  <AssemblyVersion>1.0.24.70</AssemblyVersion>
-	  <FileVersion>2025.08.05.02</FileVersion>
+	  <Version>1.0.24.71</Version>
+	  <AssemblyVersion>1.0.24.71</AssemblyVersion>
+	  <FileVersion>2025.08.05.03</FileVersion>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
-	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	  <SignAssembly>True</SignAssembly>
 	  <AssemblyOriginatorKeyFile>MaxFactry.snk</AssemblyOriginatorKeyFile>
