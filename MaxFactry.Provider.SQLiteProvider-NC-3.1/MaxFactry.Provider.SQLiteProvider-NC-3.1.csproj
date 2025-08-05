@@ -3,10 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
-		<Version>1.0.24.56</Version>
-	  <AssemblyVersion>1.0.24.56</AssemblyVersion>
-	  <FileVersion>2025.06.23.01</FileVersion>
+		<Version>1.0.24.69</Version>
+	  <AssemblyVersion>1.0.24.69</AssemblyVersion>
+	  <FileVersion>2025.08.05.01</FileVersion>
 	  <Nullable>enable</Nullable>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	  <SignAssembly>True</SignAssembly>
+	  <AssemblyOriginatorKeyFile>MaxFactry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -17,7 +21,6 @@
 	<ItemGroup>
 		<PackageReference Include="MaxFactry.General" Version="1.0.24.63" />
 		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.69" />
-		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.8" />
 		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
 	</ItemGroup>
 	<ItemGroup>
