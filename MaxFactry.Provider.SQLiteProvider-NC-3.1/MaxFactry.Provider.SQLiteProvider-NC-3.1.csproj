@@ -15,9 +15,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MaxFactry.General" Version="1.0.24.56" />
-		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.56" />
-		<PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
+		<PackageReference Include="MaxFactry.General" Version="1.0.24.63" />
+		<PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.69" />
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.8" />
+		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />

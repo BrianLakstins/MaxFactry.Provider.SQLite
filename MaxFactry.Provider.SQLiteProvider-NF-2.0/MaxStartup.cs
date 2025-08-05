@@ -125,7 +125,7 @@ namespace MaxFactry.Provider.SQLiteProvider
             lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionDateTimeKind, "utc") + ";";
 
             string lsClass = typeof(System.Data.SQLite.SQLiteFactory).FullName; // System.Data.SQLite.SQLiteFactory
-            string lsAssemblyFile = typeof(System.Data.SQLite.SQLiteFactory).Module.ToString(); //System.Data.SQLite.dll
+            string lsAssemblyFile = typeof(System.Data.SQLite.SQLiteFactory).Assembly.Location; //File system path to System.Data.SQLite.dll
             string lsName = lsDataFile;
 
             MaxIndex loDbConfig = MaxDataContextLibraryADODbProvider.AddConfig(

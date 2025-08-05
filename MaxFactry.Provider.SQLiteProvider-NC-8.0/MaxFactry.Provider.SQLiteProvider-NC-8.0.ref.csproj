@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
+	  <Version>1.0.24.56</Version>
+	  <AssemblyVersion>1.0.24.56</AssemblyVersion>
+	  <FileVersion>2025.06.23.01</FileVersion>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+
+
+
+	<ItemGroup>
+    <Compile Remove="MaxFactry.Base\DataLayer\Repository\**" />
+    <EmbeddedResource Remove="MaxFactry.Base\DataLayer\Repository\**" />
+    <None Remove="MaxFactry.Base\DataLayer\Repository\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" />
+	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" />
+	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxStartup.cs" Link="MaxStartup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MaxFactry.Base\MaxFactry.Base-NC-8.0\MaxFactry.Base-NC-8.0.ref.csproj" />
+    <ProjectReference Include="..\..\MaxFactry.Core\MaxFactry.Core-NC-8.0\MaxFactry.Core-NC-8.0.csproj" />
+    <ProjectReference Include="..\..\MaxFactry.General\MaxFactry.General-NC-8.0\MaxFactry.General-NC-8.0.ref.csproj" />
+    <ProjectReference Include="..\..\MaxFactry.Provider.Core\MaxFactry.Provider.CoreProvider-NC-8.0\MaxFactry.Provider.CoreProvider-NC-8.0.ref.csproj" />
+  </ItemGroup>
+
+</Project>

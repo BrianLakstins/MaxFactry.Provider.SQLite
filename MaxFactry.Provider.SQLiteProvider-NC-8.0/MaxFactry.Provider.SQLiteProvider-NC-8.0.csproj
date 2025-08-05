@@ -8,6 +8,8 @@
 	  <FileVersion>2025.06.23.01</FileVersion>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,19 +24,13 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="MaxFactry.General" Version="1.0.24.56" />
-	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.56" />
-	  <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.118" />
+	  <PackageReference Include="MaxFactry.General" Version="1.0.24.63" />
+	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.69" />
+	  <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
 
   <ItemGroup>
 	  <Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />
-  </ItemGroup>
-
-  <ItemGroup>
-	  <None Update="x64\SQLite.Interop.dll">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </None>
   </ItemGroup>
 
 </Project>

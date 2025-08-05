@@ -37,16 +37,17 @@
     <AssemblyOriginatorKeyFile>MaxFactry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="System.Data.SQLite.Core">
+      <Version>1.0.119</Version>
+    </PackageReference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <PackageReference Include="MaxFactry.General">
-      <Version>1.0.24.56</Version>
+      <Version>1.0.24.63</Version>
     </PackageReference>
     <PackageReference Include="MaxFactry.Provider.Core">
-      <Version>1.0.24.56</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite" Version="1.0.118">
+      <Version>1.0.24.69</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
