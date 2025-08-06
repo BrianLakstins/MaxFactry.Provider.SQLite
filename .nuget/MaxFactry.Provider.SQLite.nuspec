@@ -2,7 +2,7 @@
 <package  xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>    
     <id>MaxFactry.Provider.SQLite</id>
-    <version>1.0.24.71</version>
+    <version>1.0.24.72</version>
     <title>MaxFactry Provider SQLite</title>
     <authors>Brian Lakstins</authors>
     <owners>brianlakstins</owners>
