@@ -2,18 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
-	  <Version>1.0.24.56</Version>
-	  <AssemblyVersion>1.0.24.56</AssemblyVersion>
-	  <FileVersion>2025.06.23.01</FileVersion>
 	  <ImplicitUsings>enable</ImplicitUsings>
 	  <Nullable>enable</Nullable>
-	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-	<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+	  <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
+	  <Version>1.0.24.72</Version>
+	  <AssemblyVersion>1.0.24.72</AssemblyVersion>
+	  <FileVersion>2025.08.05.04</FileVersion>
+	  <SignAssembly>True</SignAssembly>
+	  <AssemblyOriginatorKeyFile>MaxFactry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DefineConstants>TRACE;netcore1;netcore2;netcore2_1;netcore3_1;netcore_6;netcore_8</DefineConstants>
+	</PropertyGroup>
 
-
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DefineConstants>TRACE;netcore1;netcore2;netcore2_1;netcore3_1;netcore_6;netcore_8</DefineConstants>
+	</PropertyGroup>
 
 	<ItemGroup>
     <Compile Remove="MaxFactry.Base\DataLayer\Repository\**" />
@@ -24,15 +29,14 @@
   <ItemGroup>
 	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" />
 	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxSqlGenerationLibrarySQLiteProvider.cs" />
-	  <Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxStartup.cs" Link="MaxStartup.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.8" />
   </ItemGroup>
 
   <ItemGroup>
 	  <Folder Include="MaxFactry.Base\DataLayer\Library\Provider\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
 
   <ItemGroup>

@@ -80,7 +80,9 @@ namespace MaxFactry.Base.DataLayer.Library.Provider
                                     { 
                                         //// Create the directory if it does not exist
                                         new FileInfo(lsDataFile).Directory.Create();
+#if net2
                                         System.Data.SQLite.SQLiteConnection.CreateFile(lsDataFile);
+#endif
                                     }
                                 }
                             }

@@ -117,15 +117,15 @@ namespace MaxFactry.Provider.SQLiteProvider
             //// SQLite Database Configuration
             string lsDataFolder = System.IO.Path.Combine(lsProductFolder, "data");
             string lsDataFile = System.IO.Path.Combine(lsDataFolder, lsDbFileName);
-            string lsProviderName = typeof(System.Data.SQLite.SQLiteFactory).Namespace;
+            string lsProviderName = typeof(Microsoft.Data.Sqlite.SqliteFactory).Namespace;
 
             string lsConnectionString = "Data Source=" + lsDataFile + ";";
             lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionVersion, "3") + ";";
             lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionBinaryGUID, "false") + ";";
             lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionDateTimeKind, "utc") + ";";
 
-            string lsClass = typeof(System.Data.SQLite.SQLiteFactory).FullName; // System.Data.SQLite.SQLiteFactory
-            string lsAssemblyFile = typeof(System.Data.SQLite.SQLiteFactory).Assembly.Location; //File system path to System.Data.SQLite.dll
+            string lsClass = typeof(Microsoft.Data.Sqlite.SqliteFactory).FullName; // System.Data.SQLite.SQLiteFactory
+            string lsAssemblyFile = typeof(Microsoft.Data.Sqlite.SqliteFactory).Assembly.Location; //File system path to System.Data.SQLite.dll
             string lsName = lsDataFile;
 
             MaxIndex loDbConfig = MaxDataContextLibraryADODbProvider.AddConfig(

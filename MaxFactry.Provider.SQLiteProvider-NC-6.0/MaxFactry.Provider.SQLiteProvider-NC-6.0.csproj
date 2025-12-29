@@ -2,16 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
+	  <ImplicitUsings>enable</ImplicitUsings>
+	  <Nullable>enable</Nullable>
+	  <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
 	  <Version>1.0.24.72</Version>
 	  <AssemblyVersion>1.0.24.72</AssemblyVersion>
 	  <FileVersion>2025.08.05.04</FileVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	  <SignAssembly>True</SignAssembly>
 	  <AssemblyOriginatorKeyFile>MaxFactry.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DefineConstants>TRACE;netcore1;netcore2;netcore2_1;netcore3_1;netcore_6</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DefineConstants>TRACE;netcore1;netcore2;netcore2_1;netcore3_1;netcore_6</DefineConstants>
+	</PropertyGroup>
 
 	<ItemGroup>
 		<Compile Include="..\MaxFactry.Provider.SQLiteProvider-NF-2.0\MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" Link="MaxFactry.Base\DataLayer\Library\Provider\MaxDataContextLibrarySQLiteProvider.cs" />
