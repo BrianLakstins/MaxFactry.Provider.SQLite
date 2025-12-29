@@ -120,9 +120,9 @@ namespace MaxFactry.Provider.SQLiteProvider
             string lsProviderName = typeof(Microsoft.Data.Sqlite.SqliteFactory).Namespace;
 
             string lsConnectionString = "Data Source=" + lsDataFile + ";";
-            lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionVersion, "3") + ";";
-            lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionBinaryGUID, "false") + ";";
-            lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionDateTimeKind, "utc") + ";";
+            //lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionVersion, "3") + ";";
+            //lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionBinaryGUID, "false") + ";";
+            //lsConnectionString += String.Format(MaxDataContextLibrarySQLiteProvider.OptionDateTimeKind, "utc") + ";";
 
             string lsClass = typeof(Microsoft.Data.Sqlite.SqliteFactory).FullName; // System.Data.SQLite.SQLiteFactory
             string lsAssemblyFile = typeof(Microsoft.Data.Sqlite.SqliteFactory).Assembly.Location; //File system path to System.Data.SQLite.dll

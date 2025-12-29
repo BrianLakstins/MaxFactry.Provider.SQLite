@@ -17,37 +17,30 @@
 		  <group targetFramework=".NETFramework2.0">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="System.Data.SQLite" version="1.0.118" />
 		  </group>
 		  <group targetFramework=".NETFramework4.5.2">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="System.Data.SQLite.Core" version="1.0.119" />
 		  </group>
 		  <group targetFramework=".NETFramework4.7.2">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="System.Data.SQLite.Core" version="1.0.119" />
 		  </group>
 		  <group targetFramework=".NETFramework4.8">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="System.Data.SQLite.Core" version="1.0.119" />
 		  </group>
 		  <group targetFramework="netcoreapp3.1">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="Microsoft.Data.Sqlite" version="9.0.8" />
 		  </group>
 		  <group targetFramework="net6.0">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="Microsoft.Data.Sqlite" version="9.0.8" />
 		  </group>
 		  <group targetFramework="net8.0">
 			  <dependency id="MaxFactry.General" version="1.0.26.01" />
 			  <dependency id="MaxFactry.Provider.Core" version="1.0.26.01" />
-			  <dependency id="Microsoft.Data.Sqlite" version="9.0.8" />
 		  </group>
 	  </dependencies>
 	<summary>MaxFactry SQLite Provider supports the MaxFactry Framework</summary>
