@@ -26,8 +26,8 @@
 	</ItemGroup>
 
   <ItemGroup>
-	  <PackageReference Include="MaxFactry.General" Version="1.0.24.63" />
-	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.24.69" />
+	  <PackageReference Include="MaxFactry.General" Version="1.0.26.1" />
+	  <PackageReference Include="MaxFactry.Provider.Core" Version="1.0.26.1" />
 	  <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.8" />
   </ItemGroup>
 
