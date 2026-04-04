@@ -30,6 +30,7 @@
 // <change date="4/1/2016" author="Brian A. Lakstins" description="Initial Release">
 // <change date="4/22/2016" author="Brian A. Lakstins" description="Updated to support altering a table.">
 // <change date="3/31/2024" author="Brian A. Lakstins" description="Update for Namespace and naming convention changes">
+// <change date="4/5/2026" author="Brian A. Lakstins" description="Make sure Guid columns are not case sensitive">
 // </changelog>
 #endregion
 
@@ -62,7 +63,7 @@ namespace MaxFactry.Base.DataLayer.Library.Provider
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(decimal), "."), "NUMERIC");
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(DateTime), "."), "NUMERIC");
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(double), "."), "REAL");
-            this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(Guid), "."), "TEXT");
+            this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(Guid), "."), "TEXT COLLATE NOCASE");
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(short), "."), "INTEGER");
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(int), "."), "INTEGER");
             this.AddReplacement(string.Concat("MaxDefinitionType.", typeof(long), "."), "INTEGER");
