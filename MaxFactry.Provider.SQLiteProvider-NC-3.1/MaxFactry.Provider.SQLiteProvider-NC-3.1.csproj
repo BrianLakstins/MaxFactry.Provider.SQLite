@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>MaxFactry.Provider.SQLiteProvider</RootNamespace>
-		<Version>1.0.26.15</Version>
-	  <AssemblyVersion>1.0.26.15</AssemblyVersion>
-	  <FileVersion>2026.04.04.01</FileVersion>
+		<Version>1.0.26.36</Version>
+	  <AssemblyVersion>1.0.26.36</AssemblyVersion>
+	  <FileVersion>2026.09.25.01</FileVersion>
 	  <Nullable>enable</Nullable>
 	  <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 	  <SignAssembly>True</SignAssembly>
